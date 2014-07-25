@@ -1,6 +1,6 @@
 {
   "name": "fast-http",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create a tiny web server which does not support the MVC pattern,for simple Node.js app.",
   "main": "fast-http.js",
   "engines": {
@@ -16,10 +16,16 @@
     "basic",
     "simple"
   ],
-  "author": "cedced19",
+  "author": {
+    "name": "cedced19"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cedced19/fast-http/issues"
   },
-  "homepage": "https://github.com/cedced19/fast-http"
+  "homepage": "https://github.com/cedced19/fast-http",
+  "readme": "# Reverse String\n\n[![Build Status](https://travis-ci.org/cedced19/fast-http.svg)](https://travis-ci.org/cedced19/fast-http)\n\n## Installation\n\n```\nnpm install fast-http  --save\n```\n\n## Usage\n\nCreate a tiny web server which does not support the MVC pattern,for simple Node.js app.\nBecause I copy the same code in all my projects.\n\n## How to use\n\n~~~ javascript\nvar fastHttp = require(\"fast-http\"),\n    port = process.argv[2] || 1337;\n\nhttpServer = fastHttp(port).listen(parseInt(port, 10));\n~~~",
+  "readmeFilename": "README.md",
+  "_id": "fast-http@0.0.1",
+  "_from": "fast-http@^0.0.1"
 }

@@ -17,7 +17,7 @@ Because I copy the same code in all my projects.
 
 ~~~ javascript
 var fastHttp = require("fast-http"),
-    port = process.argv[2] || 1337;
+    port = 80;
 
-httpServer = fastHttp(port).listen(parseInt(port, 10));
+httpServer = fastHttp(port);
 ~~~

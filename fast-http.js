@@ -41,7 +41,7 @@ function fastHttp (port) {
     });
   });
 
-  return httpServer;
+  return httpServer.listen(parseInt(process.argv[2] || port, 10));
   }
 
 
