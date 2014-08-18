@@ -1,6 +1,7 @@
 # Fast Http
 
 [![Build Status](https://travis-ci.org/cedced19/fast-http.svg)](https://travis-ci.org/cedced19/fast-http)
+[![NPM version](https://badge.fury.io/js/fast-http.svg)](http://badge.fury.io/js/fast-http)
 
 ## Installation
 

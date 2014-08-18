@@ -1,8 +1,8 @@
 function fastHttp (port) {
-    var http = require("http"),
-    url = require("url"),
-    path = require("path"),
-    fs = require("fs");
+    var http = require('http'),
+    url = require('url'),
+    path = require('path'),
+    fs = require('fs');
 
   httpServer = http.createServer(function(request, response) {
 
@@ -10,9 +10,16 @@ function fastHttp (port) {
       , filename = path.join(process.cwd(), uri);
 
     var contentTypesByExtension = {
-      '.html': "text/html",
-      '.css':  "text/css",
-      '.js':   "text/javascript"
+      '.html': 'text/html',
+      '.css':  'text/css',
+      '.js':   'text/javascript',
+      '.mp3': 'audio/mp3',
+      '.gif': 'image/gif',
+      '.jpg': 'image/jpeg',
+      '.png': 'image/png',
+      '.svg': 'image/svg+xml',
+      '.meg': 'video/mpeg',
+      '.mp4': 'video/mp4'
     };
 
     path.exists(filename, function(exists) {
@@ -24,18 +31,18 @@ function fastHttp (port) {
 
       if (fs.statSync(filename).isDirectory()) filename += '/index.html';
 
-      fs.readFile(filename, "binary", function(err, file) {
+      fs.readFile(filename, 'binary', function(err, file) {
         if(err) {
-          response.writeHead(500, {"Content-Type": "text/plain"});
+          response.writeHead(500, {'Content-Type': 'text/plain'});
           fs.createReadStream('500.html').pipe(response);
           return;
         }
 
         var headers = {};
         var contentType = contentTypesByExtension[path.extname(filename)];
-        if (contentType) headers["Content-Type"] = contentType;
+        if (contentType) headers['Content-Type'] = contentType;
         response.writeHead(200, headers);
-        response.write(file, "binary");
+        response.write(file, 'binary');
         response.end();
       });
     });
