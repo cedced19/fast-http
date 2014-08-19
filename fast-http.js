@@ -33,7 +33,7 @@ function fastHttp (port) {
 
       fs.readFile(filename, 'binary', function(err, file) {
         if(err) {
-          response.writeHead(500, {'Content-Type': 'text/plain'});
+          response.writeHead(500, {'Content-Type': 'text/html'});
           fs.createReadStream('500.html').pipe(response);
           return;
         }
