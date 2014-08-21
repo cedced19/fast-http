@@ -25,7 +25,13 @@ function fastHttp (port) {
     path.exists(filename, function(exists) {
       if(!exists) {
         response.writeHead(404, {'Content-Type': 'text/html'});
-        fs.createReadStream('404.html').pipe(response);
+        path.exists('404.html', function(exists) {
+          if(!exists) {
+            response.end('Error 404');
+            return;
+          }
+          fs.createReadStream('404.html').pipe(response);
+        });
         return;
       }
 
@@ -34,11 +40,17 @@ function fastHttp (port) {
       fs.readFile(filename, 'binary', function(err, file) {
         if(err) {
           response.writeHead(500, {'Content-Type': 'text/html'});
-          fs.createReadStream('500.html').pipe(response);
+          path.exists('500.html', function(exists) {
+            if(!exists) {
+              response.end('Error 500');
+              return;
+            }
+              fs.createReadStream('500.html').pipe(response);
+          });
           return;
         }
 
-        var headers = {};
+        var headers = new Object();
         var contentType = contentTypesByExtension[path.extname(filename)];
         if (contentType) headers['Content-Type'] = contentType;
         response.writeHead(200, headers);

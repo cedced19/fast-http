@@ -1,6 +1,6 @@
 {
   "name": "fast-http",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Create a tiny web server which does not support the MVC pattern,for simple Node.js app.",
   "main": "fast-http.js",
   "engines": {

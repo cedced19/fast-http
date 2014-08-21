@@ -17,8 +17,25 @@ Because I copy the same code in all my projects.
 ## How to use
 
 ~~~ javascript
-var fastHttp = require("fast-http"),
+var fastHttp = require('fast-http'),
     port = 80;
 
 httpServer = fastHttp(port);
 ~~~
+
+## Error
+
+If you have a 404.html and 500.html at root of the project this page will be display,
+else a default text will be display.
+
+## CLI
+
+Installation:
+```
+npm install fast-http-cli  -g
+```
+
+Use:
+```
+fast-http <port>
+```
