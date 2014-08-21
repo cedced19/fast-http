@@ -1,0 +1,38 @@
+{
+  "name": "fast-http-cli",
+  "version": "0.0.2",
+  "description": "Use fast-http with a command!",
+  "main": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bin": {
+    "fast-http": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cedced19/fast-http"
+  },
+  "keywords": [
+    "fast",
+    "http",
+    "fast-http",
+    "apache",
+    "simple"
+  ],
+  "author": {
+    "name": "cedced19"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cedced19/fast-http/issues"
+  },
+  "homepage": "https://github.com/cedced19/fast-http",
+  "dependencies": {
+    "opn": "^1.0.0",
+    "chalk": "^0.5.1",
+    "fast-http": "*"
+  },
+  "engineStrict": true,
+  "preferGlobal": true
+}
