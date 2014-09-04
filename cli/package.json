@@ -1,6 +1,6 @@
 {
   "name": "fast-http-cli",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Use fast-http with a command!",
   "main": "cli.js",
   "engines": {
@@ -31,7 +31,8 @@
   "dependencies": {
     "opn": "^1.0.0",
     "chalk": "^0.5.1",
-    "fast-http": "*"
+    "fast-http": "*",
+    "fb-flo": "^0.3.0"
   },
   "engineStrict": true,
   "preferGlobal": true
