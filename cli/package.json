@@ -1,6 +1,6 @@
 {
   "name": "fast-http-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Use fast-http with a command!",
   "main": "cli.js",
   "engines": {
