@@ -2,6 +2,7 @@ function fastHttp (port) {
     var http = require('http'),
     url = require('url'),
     path = require('path'),
+    mime = require('mime'),
     fs = require('fs');
 
   httpServer = http.createServer(function(request, response) {
@@ -9,18 +10,6 @@ function fastHttp (port) {
     var uri = url.parse(request.url).pathname
       , filename = path.join(process.cwd(), uri);
 
-    var contentTypesByExtension = {
-      '.html': 'text/html',
-      '.css':  'text/css',
-      '.js':   'text/javascript',
-      '.mp3': 'audio/mp3',
-      '.gif': 'image/gif',
-      '.jpg': 'image/jpeg',
-      '.png': 'image/png',
-      '.svg': 'image/svg+xml',
-      '.meg': 'video/mpeg',
-      '.mp4': 'video/mp4'
-    };
 
     path.exists(filename, function(exists) {
       if(!exists) {
@@ -50,10 +39,7 @@ function fastHttp (port) {
           return;
         }
 
-        var headers = new Object();
-        var contentType = contentTypesByExtension[path.extname(filename)];
-        if (contentType) headers['Content-Type'] = contentType;
-        response.writeHead(200, headers);
+        response.writeHead(200, {'Content-Type': mime.lookup(filename)});
         response.write(file, 'binary');
         response.end();
       });

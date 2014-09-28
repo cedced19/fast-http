@@ -1,6 +1,6 @@
 {
   "name": "fast-http",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Create a tiny web server which does not support the MVC pattern,for simple Node.js app.",
   "main": "fast-http.js",
   "engines": {
@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/cedced19/fast-http/issues"
   },
-  "homepage": "https://github.com/cedced19/fast-http"
+  "homepage": "https://github.com/cedced19/fast-http",
+  "dependencies": {
+    "mime": "^1.2.11"
+  }
 }
