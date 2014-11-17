@@ -2,16 +2,23 @@
 'use strict';
 
 var chalk = require('chalk'),
-     fastHttp = require('fast-http'),
+     server = require('fast-http'),
      opn = require('opn'),
-     port = process.argv.slice(2),
      path = require('path'),
      fs = require('fs'),
+     program = require('commander'),
      test = require('net').createServer();
 
-if(port.length == 0){
-    console.log(chalk.red('You must enter a port!'));
-    process.exit();
+program
+  .version(require('./package.json').version)
+  .option('-p, --port [number]', 'specified the port')
+  .option('-o, --open', 'open in the browser')
+  .parse(process.argv);
+
+if (!isNaN(parseFloat(program.port)) && isFinite(program.port)){
+  var port = program.port;
+}else{
+  var port = 80;
 }
 
 test.once('error', function(err) {
@@ -21,10 +28,10 @@ test.once('error', function(err) {
 
 test.once('listening', function() {
   test.close();
-  fastHttp(port);
-  console.log('The server has just open on ' + chalk.green('http://localhost:' + port));
-
-  opn('http://localhost:' + port);
+  server(port, process.cwd());
+  if (program.open){
+    opn('http://localhost:' + port);
+  }
 
   require('fb-flo')(
           process.cwd(),
@@ -41,7 +48,7 @@ test.once('listening', function() {
           function resolver(filepath, callback) {
             callback({
               resourceURL: path.extname(filepath),
-              reload: !filepath.match(/\.(css|js)$/),
+              reload: !filepath.match(/\.(css)$/),
               contents: fs.readFileSync(filepath),
               update: function(_window, _resourceURL) {
                 console.log("Resource " + _resourceURL + " has just been updated with new content");
@@ -51,7 +58,7 @@ test.once('listening', function() {
         );
 });
 
-test.listen(port[0]);
+test.listen(port);
 
 
 

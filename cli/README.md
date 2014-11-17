@@ -2,20 +2,32 @@
 
 [![Build Status](https://travis-ci.org/cedced19/fast-http.svg)](https://travis-ci.org/cedced19/fast-http)
 [![NPM version](https://badge.fury.io/js/fast-http-cli.svg)](http://badge.fury.io/js/fast-http-cli)
+[![Dependency Status](https://david-dm.org/cedced19/fast-http.svg)](https://david-dm.org/cedced19/fast-http)
 
-Use fast-http with a command!
+Use [fast-http](https://www.npmjs.org/package/fast-http) with a command!
 
 ## Installation
 
-```
+```bash
 npm install fast-http-cli  -g
 ```
 
 ## How to use
 
+```bash
+fast-http
 ```
-fast-http <port>
-```
+
+## Options
+
+    -h, --help                  output usage information
+
+    -V, --version               output the version number
+
+    -p, --port [number]          specified the port
+
+    -o, --open              open in the browser
+
 ## Fb-flo Integration
 
 ### 1. Install the Chrome Extension
@@ -27,7 +39,9 @@ Grab the [fb-flo Chrome extension](https://chrome.google.com/webstore/detail/ahk
 To activate fb-flo from the browser:
 
 * Open Chrome DevTools.
+
 * Click on the new 'fb-flo' pane.
+
 * Click on 'Activate for this site'
 
 See screenshot:
