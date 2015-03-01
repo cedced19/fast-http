@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/cedced19/fast-http.svg)](https://travis-ci.org/cedced19/fast-http)
 [![NPM version](https://badge.fury.io/js/fast-http.svg)](http://badge.fury.io/js/fast-http)
-[![Dependency Status](https://david-dm.org/cedced19/fast-http.svg)](https://david-dm.org/cedced19/fast-http)
 
 ## Installation
 

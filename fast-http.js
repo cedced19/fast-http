@@ -1,10 +1,10 @@
-module.exports  = function (port, root) {
-    var http = require('http'),
+var http = require('http'),
     url = require('url'),
     path = require('path'),
     mime = require('mime'),
     fs = require('fs');
 
+module.exports  = function (port, root) {    
     var server = http.createServer(function(req, res) {
 
         var uri = url.parse(req.url).pathname,
@@ -47,5 +47,5 @@ module.exports  = function (port, root) {
             });
     });
     console.log('The server is now launch on: http://localhost:' + port);
-    return server.listen(port);
+    server.listen(port);
 }

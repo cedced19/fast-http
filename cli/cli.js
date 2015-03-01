@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
-var chalk = require('chalk'),
+var colors = require('colors'),
      server = require('fast-http'),
      opn = require('opn'),
      path = require('path'),
      fs = require('fs'),
      program = require('commander'),
+     port = 80,
      test = require('net').createServer();
 
 program
@@ -16,19 +17,18 @@ program
   .parse(process.argv);
 
 if (!isNaN(parseFloat(program.port)) && isFinite(program.port)){
-  var port = program.port;
-}else{
-  var port = 80;
+  port = program.port;
 }
 
 test.once('error', function(err) {
-    console.log(chalk.red('This port is already used!'));
+    console.log(colors.red('This port is already used!'));
     process.exit();
 });
 
 test.once('listening', function() {
   test.close();
   server(port, process.cwd());
+    
   if (program.open){
     opn('http://localhost:' + port);
   }
@@ -54,8 +54,8 @@ test.once('listening', function() {
                 console.log("Resource " + _resourceURL + " has just been updated with new content");
               }
             });
-          }
-        );
+         }
+  );
 });
 
 test.listen(port);

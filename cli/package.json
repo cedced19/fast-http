@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/cedced19/fast-http",
   "dependencies": {
-    "chalk": "^0.5.1",
+    "colors": "1.0.3",
     "commander": "^2.5.0",
     "fast-http": "*",
     "fb-flo": "^0.3.1",
