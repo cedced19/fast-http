@@ -2,7 +2,7 @@
   "name": "fast-http",
   "version": "0.1.1",
   "description": "Create a tiny web server which does not support the MVC pattern,for simple Node.js app.",
-  "main": "fast-http.js",
+  "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
