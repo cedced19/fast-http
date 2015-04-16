@@ -1,40 +1,40 @@
 {
-  "name": "fast-http-cli",
-  "version": "0.0.6",
-  "description": "Use fast-http with a command!",
-  "main": "cli.js",
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "bin": {
-    "fast-http": "cli.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/cedced19/fast-http"
-  },
-  "keywords": [
-    "fast",
-    "http",
-    "fast-http",
-    "apache",
-    "simple"
-  ],
-  "author": {
-    "name": "cedced19"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cedced19/fast-http/issues"
-  },
-  "homepage": "https://github.com/cedced19/fast-http",
-  "dependencies": {
-    "colors": "1.0.3",
-    "commander": "^2.5.0",
-    "fast-http": "*",
-    "fb-flo": "^0.3.1",
-    "opn": "^1.0.0"
-  },
-  "engineStrict": true,
-  "preferGlobal": true
+    "name": "fast-http-cli",
+    "version": "0.0.6",
+    "description": "Use fast-http with a command!",
+    "main": "cli.js",
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "bin": {
+        "fast-http": "cli.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/cedced19/fast-http"
+    },
+    "keywords": [
+        "fast",
+        "http",
+        "fast-http",
+        "apache",
+        "simple"
+    ],
+    "author": {
+        "name": "cedced19"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/cedced19/fast-http/issues"
+    },
+    "homepage": "https://github.com/cedced19/fast-http",
+    "dependencies": {
+        "colors": "1.0.3",
+        "commander": "^2.5.0",
+        "fast-http": "*",
+        "fb-flo": "^0.3.1",
+        "opn": "^1.0.0"
+    },
+    "engineStrict": true,
+    "preferGlobal": true
 }

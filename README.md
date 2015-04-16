@@ -17,6 +17,7 @@ Because I copy the same code in all my projects.
 
 ## How to use
 
+Basic usage:
 ```javascript
 var server = require('fast-http'),
     port = 80,
@@ -25,6 +26,14 @@ var server = require('fast-http'),
 server(port, root);
 
 // __dirname is the name of the directory that the currently executing script resides in.
+```
+
+If you want to use it with socket.io:
+
+```javascript
+var server = require('fast-http')(80, __dirname);
+
+var io = require('socket.io').listen(server);
 ```
 
 ## CLI
@@ -43,6 +52,7 @@ Options:
     -V, --version               output the version number
 
     -p, --port [number]          specified the port
+    
 
 Use:
 ```bash
