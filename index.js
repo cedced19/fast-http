@@ -38,8 +38,7 @@ module.exports  = function (port, root) {
                 }
                 console.log('Ok 200');
                 res.writeHead(200, {
-                    'Content-Type': mime.lookup(filename) + ';' + mime.charsets.lookup(mime.lookup(filename)),
-                    'X-Powered-By': 'fast-http'
+                    'Content-Type': mime.lookup(filename) + ';' + mime.charsets.lookup(mime.lookup(filename)) 
                 });
                 res.write(file, 'binary');
                 res.end();
