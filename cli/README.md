@@ -24,9 +24,11 @@ fast-http
 
 -V, --version               output the version number
 
--p, --port [number]          specified the port
+-p, --port [number]         specified the port
 
--o, --open              open in the browser
+-o, --open                  open in the browser
+
+-n, --nodemon               use nodemon with your node project
 ```
 
 ## Fb-flo Integration
@@ -46,5 +48,4 @@ To activate fb-flo from the browser:
 * Click on 'Activate for this site'
 
 See screenshot:
-
 ![](http://i.imgur.com/SamY32i.png)
