@@ -21,17 +21,20 @@ Basic usage:
 ```javascript
 var server = require('fast-http'),
     port = 80,
-    root = __dirname;
+    root = __dirname,
+    wordy = true;
 
-server(port, root);
+server(port, root, wordy);
 
 // __dirname is the name of the directory that the currently executing script resides in.
 ```
 
+The third argument specified if it\'ll log all request.
+
 If you want to use it with socket.io:
 
 ```javascript
-var server = require('fast-http')(80, __dirname);
+var server = require('fast-http')(80, __dirname, false);
 
 var io = require('socket.io').listen(server);
 ```
@@ -46,13 +49,15 @@ npm install fast-http-cli  -g
 ```
 
 Options:
+```
+-h, --help                  output usage information
 
-    -h, --help                  output usage information
+-V, --version               output the version number
 
-    -V, --version               output the version number
+-p, --port [number]         specified the port
 
-    -p, --port [number]          specified the port
-    
+-w, --wordy                 specified if it'll log all request
+```
 
 Use:
 ```bash

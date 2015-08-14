@@ -1,7 +1,7 @@
 {
     "name": "fast-http",
-    "version": "0.1.2",
-    "description": "Create a tiny web server which does not support the MVC pattern,for simple Node.js app.",
+    "version": "0.1.3",
+    "description": "Create a tiny web server which does not support the MVC pattern, for simple Node.js app.",
     "main": "index.js",
     "engines": {
         "node": ">=0.10.0"
@@ -19,7 +19,12 @@
     "author": {
         "name": "cedced19"
     },
-    "license": "MIT",
+    "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://cedced19.github.io/license/"
+        }
+    ],
     "bugs": {
         "url": "https://github.com/cedced19/fast-http/issues"
     },
