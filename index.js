@@ -9,8 +9,9 @@ module.exports = function (port, root, wordy) {
     if (wordy === undefined) wordy = false;
     if (port === undefined) port = 80;
     var server = http.createServer(function (req, res) {
+        var reqUrl = req.url.replace(/(\.\.\/?)/g, '');
 
-        var uri = url.parse(req.url).pathname,
+        var uri = url.parse(reqUrl).pathname,
             filename = path.join(root, uri);
 
         if (uri.charAt(uri.length - 1) === '/') {
